@@ -1,14 +1,11 @@
 import styled from "styled-components";
 import { space, SpaceProps } from "styled-system";
-import { CardTheme } from "./types";
 
-export interface CardHeaderProps extends SpaceProps {
-  variant?: keyof CardTheme["cardHeaderBackground"];
-}
+export type CardHeaderProps = SpaceProps;
 
 const CardHeader = styled.div<CardHeaderProps>`
-  background: ${({ theme, variant = "default" }) => theme.card.cardHeaderBackground[variant]};
-  border-radius: ${({ theme }) => `${theme.radii.card} ${theme.radii.card} 0 0`};
+  background: ${({ theme }) => theme.card.cardHeaderBackground};
+
   ${space}
 `;
 
